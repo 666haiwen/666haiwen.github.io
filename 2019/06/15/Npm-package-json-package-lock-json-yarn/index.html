@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Npm&amp;&amp;package.json&amp;&amp;package-lock.json&amp;&amp;yarn | Blog for recording</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Npm淘宝镜像cpm:  npm install -g cnpm –registry=https://registry.npm.taobao.org Packagepackages中申明了需要下载的依赖包和其对应的版本。 其中，版本号的申明有多种规则，即不同的语义内容，具体如下： 12345678910111213&amp;quot;devDependencies&amp;quot;: &amp;#123;   &amp;quo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Npm&amp;&amp;package.json&amp;&amp;package-lock.json&amp;&amp;yarn">
+<meta property="og:url" content="https://666haiwen.github.io/2019/06/15/Npm-package-json-package-lock-json-yarn/index.html">
+<meta property="og:site_name" content="Blog for recording">
+<meta property="og:description" content="Npm淘宝镜像cpm:  npm install -g cnpm –registry=https://registry.npm.taobao.org Packagepackages中申明了需要下载的依赖包和其对应的版本。 其中，版本号的申明有多种规则，即不同的语义内容，具体如下： 12345678910111213&amp;quot;devDependencies&amp;quot;: &amp;#123;   &amp;quo">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-06-15T10:32:35.556Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Npm&amp;&amp;package.json&amp;&amp;package-lock.json&amp;&amp;yarn">
+<meta name="twitter:description" content="Npm淘宝镜像cpm:  npm install -g cnpm –registry=https://registry.npm.taobao.org Packagepackages中申明了需要下载的依赖包和其对应的版本。 其中，版本号的申明有多种规则，即不同的语义内容，具体如下： 12345678910111213&amp;quot;devDependencies&amp;quot;: &amp;#123;   &amp;quo">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/typing.css">
+  <link rel="stylesheet" href="/css/donate.css">
+  
+</head>
+</html>
+  
+    
+      <body>
+    
+  
+      <div id="container" class="container">
+        <article id="post-Npm-package-json-package-lock-json-yarn" class="article article-type-post" itemscope itemprop="blogPost">
+  <header id="header" class="header">
+  <nav class="mobile-nav">
+    <h1 class="nickname">Chen Zexian</h1>
+    <ul class="mobile-nav-menu">
+      <label for="mobile-menu-toggle"><a>&#9776; Menu</a></label>
+      <input type="checkbox" id="mobile-menu-toggle">
+      <ul class="mobile-nav-link">
+        
+        <a href="/">Home</a>
+        
+        <a href="/archives">Archives</a>
+        
+        <a href="/categories/paper">Paper Reading</a>
+        
+        <a href="/categories/frontend">Frontend</a>
+        
+        <a href="/categories/visualization">Visualization</a>
+        
+        <a href="/categories/algorithm">Algorithm</a>
+        
+        <a href="/categories/daily">Daily</a>
+        
+      </ul>
+    </ul>
+  </nav>
+	
+		<nav id="main-nav" class="main-nav nav-left">
+	
+	
+	  <a class="main-nav-link" href="/">Home</a>
+	
+	  <a class="main-nav-link" href="/archives">Archives</a>
+	
+	  <a class="main-nav-link" href="/categories/paper">Paper Reading</a>
+	
+	  <a class="main-nav-link" href="/categories/frontend">Frontend</a>
+	
+	  <a class="main-nav-link" href="/categories/visualization">Visualization</a>
+	
+	  <a class="main-nav-link" href="/categories/algorithm">Algorithm</a>
+	
+	  <a class="main-nav-link" href="/categories/daily">Daily</a>
+	
+  </nav>
+</header>
+
+  <hr>
+  <div class="article-inner">
+    
+
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Npm&amp;&amp;package.json&amp;&amp;package-lock.json&amp;&amp;yarn
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry typo" itemprop="articleBody">
+      
+        <h3 id="Npm"><a href="#Npm" class="headerlink" title="Npm"></a>Npm</h3><p>淘宝镜像cpm:</p>
+<p> npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
+<h3 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h3><p>packages中申明了需要下载的依赖包和其对应的版本。</p>
+<p>其中，版本号的申明有多种规则，即不同的语义内容，具体如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&quot;devDependencies&quot;: &#123;</span><br><span class="line">   &quot;@babel/core&quot;: &quot;^7.4.4&quot;, // &gt;=v7.4.4 but &lt;v8</span><br><span class="line">   &quot;@babel/preset-env&quot;: &quot;~7.4.4&quot;, // &gt;=v7.4.4 but &lt;v7.5</span><br><span class="line">   &quot;@babel/preset-react&quot;: &quot;7.0.0&quot;, // ==v7.0.0</span><br><span class="line">   &quot;qux&quot; : &quot;&lt;1.0.0 || &gt;=2.3.1 &lt;2.4.5 || &gt;=2.5.2 &lt;3.0.0&quot;, </span><br><span class="line">   &quot;asd&quot; : &quot;http://asdf.com/asdf.tar.gz&quot;, // 指定包地址</span><br><span class="line">   &quot;thr&quot; : &quot;*&quot;,  // 任意版本</span><br><span class="line">   &quot;thr2&quot;: &quot;&quot;, // 任意版本</span><br><span class="line">   &quot;lat&quot; : &quot;latest&quot;, // 当前最新</span><br><span class="line">   &quot;dyl&quot; : &quot;file:../dyl&quot;, // 本地地址</span><br><span class="line">   &quot;xyz&quot; : &quot;git+ssh://git@github.com:npm/npm.git#v1.0.27&quot;, // git 地址</span><br><span class="line">   ...</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>更新一个包和对应的package内容:</p>
+<p>package.json中的内容会自动更新（npm &gt;=v5.0)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update &lt;package.name&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Package-lock"><a href="#Package-lock" class="headerlink" title="Package-lock"></a>Package-lock</h3><p>Package中相同的语义规则下，安装的可能是不同版本的package，这可能会造成一些问题。然后npm更新了一个版本(v5.0)，至此之后，会多出一个package-lock.json，显示了安装的真正版本。</p>
+<p>那么出现一个问题，package和package-lock安装的内容可能还是不一样的,因为lock文件只是显示了具体安装的版本，而package语义规则下的版本可能与lock版本不同，所以，需要以其中一个为主才行。</p>
+<p>如果package-lock下的版本符合package的语义规则，那么就按照lock所记录的版本。</p>
+<p>如果package-lock不符合package的语义规则<em>(例如我更新了package中的一个包依赖)</em>，那么按照package所记录的版本，同时更新package-lock文件。</p>
+<h3 id="Yarn"><a href="#Yarn" class="headerlink" title="Yarn"></a><a href="https://yarnpkg.com/zh-Hant/" target="_blank" rel="noopener">Yarn</a></h3><p>同样是对package进行包管理，但是并行下载更快，也更方便一些。</p>
+<p>使用指令和npm差不太多.</p>
+<p>安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yarn</span><br></pre></td></tr></table></figure>
+
+<p>淘宝镜像:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      <ul class="article-meta">
+        <li>
+          <span class="label">Published Date:</span>
+          <a href="/2019/06/15/Npm-package-json-package-lock-json-yarn/" class="article-date">
+  <time datetime="2019-06-15T05:28:55.000Z" itemprop="datePublished">2019-06-15</time>
+</a>
+
+        </li>
+        
+          <li>
+            <span class="label">Category:</span>
+            
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/frontend/">frontend</a>
+  </div>
+
+
+          </li>
+        
+        
+        <hr>
+      </ul>
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav" class="article-nav">
+  
+    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+  
+  
+    <a href="/2019/06/14/index/" id="article-nav-older" class="article-nav-link-wrap older">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Index</div>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+      </div>
+      
+    <footer id="footer" class="post-footer footer">
+      
+      <hr>
+      <div id="footerContent" class="footer-content">
+        <p>Do things you want.</p>
+
+
+      </div>
+    </footer>
+
+      
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+<script src="/js/typing.js"></script>
+<!--[if lt IE 9]><script src="https://cdn.jsdelivr.net/npm/html5shiv@3/dist/html5shiv.min.js"></script><![endif]-->
+
+
+
+
+
+
+
+    </div>
+  </body>
+</html>
