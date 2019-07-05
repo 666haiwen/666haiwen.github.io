@@ -22,7 +22,7 @@ categories:
 - $\color{red}{\mathcal{R}是一个奖励函数，\mathcal{R_s}=\mathbb{E}[R_{t+1}|\mathcal{S}=s]}$
 - $\color{red}\gamma是一个衰减因子，\gamma\in[0,1]$
 
-奖励函数$\mathcal{R}​$代表了从状态$s​$转移到状态$s'​$时获得的奖励，这里奖励是离开状态后得到的(至于离开得到奖励还是进入一个新状态得到奖励只是定义了一种获得的规则而已)
+奖励函数$\mathcal{R}$代表了从状态$s$转移到状态$s'$时获得的奖励，这里奖励是离开状态后得到的(至于离开得到奖励还是进入一个新状态得到奖励只是定义了一种获得的规则而已)
 
 #### $G_t$
 
@@ -46,7 +46,7 @@ $$
 
 #### 贝尔曼方程([Bellman equation](https://en.wikipedia.org/wiki/Bellman_equation))
 
-![](D:\SSD_workspace\githubIo\source\img\bellman equation.jpg)
+![](img/bellman equation.jpg)
 
 最后一行理由为：x的期望的期望是x期望其本身.得到了一个重要的**递归**公式:
 $$
@@ -61,23 +61,23 @@ $$
 
 #### 矩阵求解
 
-![](D:\SSD_workspace\githubIo\source\img\bellman-2.png)
+![](img/bellman-2.png)
 
 ### Markov Decision Process
 
-![](D:\SSD_workspace\githubIo\source\img\mdp-1.png)
+![](img/mdp-1.png)
 
 ### 策略(policy)
 
-![](D:\SSD_workspace\githubIo\source\img\mdp-2.png)
+![](img/mdp-2.png)
 
 策略代表了在给定状态$s$下，可能的动作概率分布。
 
-![](D:\SSD_workspace\githubIo\source\img\mdp-3.png)
+![](img/mdp-3.png)
 
 ### 价值函数-2
 
-![](D:\SSD_workspace\githubIo\source\img\mdp-4.png)
+![](img/mdp-4.png)
 $$
 \begin{align}
 v_\pi(s)&=\sum_{a\in\mathcal{A}}\pi(a|s)q_\pi(s,a) \\
@@ -101,19 +101,19 @@ $q_\pi(s,a)$由两部分组成，及时回报和执行这个操作后可能到�
 
 ### 将其最优化
 
-![](D:\SSD_workspace\githubIo\source\img\mdp-5.png)
+![](img/mdp-5.png)
 
 ### 最优策略
 
-![](D:\SSD_workspace\githubIo\source\img\mdp-6.png)
+![](img/mdp-6.png)
 
 ### 最优状态动作价值函数
 
-![](D:\SSD_workspace\githubIo\source\img\mdp-7.png)
+![](img/mdp-7.png)
 
 彼此带入：
 
-![](D:\SSD_workspace\githubIo\source\img\mdp-8.png)
+![](img/mdp-8.png)
 
 ### 如何求解
 
