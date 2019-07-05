@@ -10,7 +10,7 @@
 <meta property="og:url" content="https://666haiwen.github.io/2019/06/14/index/index.html">
 <meta property="og:site_name" content="Blog for recording">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-14T08:42:10.489Z">
+<meta property="og:updated_time" content="2019-07-05T06:47:01.069Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Index">
   
@@ -190,5 +190,20 @@
 
 
     </div>
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>

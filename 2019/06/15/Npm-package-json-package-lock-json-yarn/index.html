@@ -5,17 +5,17 @@
   
   <title>Npm&amp;&amp;package.json&amp;&amp;package-lock.json&amp;&amp;yarn | Blog for recording</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Npm淘宝镜像cnpm:  npm install -g cnpm –registry=https://registry.npm.taobao.org Packagepackages中申明了需要下载的依赖包和其对应的版本。 其中，版本号的申明有多种规则，即不同的语义内容，具体如下： 12345678910111213&amp;quot;devDependencies&amp;quot;: &amp;#123;   &amp;qu">
+  <meta name="description" content="Npm淘宝镜像cnpm:  npm install -g cnpm —registry=https://registry.npm.taobao.org Packagepackages中申明了需要下载的依赖包和其对应的版本。 其中，版本号的申明有多种规则，即不同的语义内容，具体如下： 12345678910111213&amp;quot;devDependencies&amp;quot;: &amp;#123;   &amp;qu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Npm&amp;&amp;package.json&amp;&amp;package-lock.json&amp;&amp;yarn">
 <meta property="og:url" content="https://666haiwen.github.io/2019/06/15/Npm-package-json-package-lock-json-yarn/index.html">
 <meta property="og:site_name" content="Blog for recording">
-<meta property="og:description" content="Npm淘宝镜像cnpm:  npm install -g cnpm –registry=https://registry.npm.taobao.org Packagepackages中申明了需要下载的依赖包和其对应的版本。 其中，版本号的申明有多种规则，即不同的语义内容，具体如下： 12345678910111213&amp;quot;devDependencies&amp;quot;: &amp;#123;   &amp;qu">
+<meta property="og:description" content="Npm淘宝镜像cnpm:  npm install -g cnpm —registry=https://registry.npm.taobao.org Packagepackages中申明了需要下载的依赖包和其对应的版本。 其中，版本号的申明有多种规则，即不同的语义内容，具体如下： 12345678910111213&amp;quot;devDependencies&amp;quot;: &amp;#123;   &amp;qu">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-17T08:27:11.730Z">
+<meta property="og:updated_time" content="2019-07-05T06:47:01.068Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Npm&amp;&amp;package.json&amp;&amp;package-lock.json&amp;&amp;yarn">
-<meta name="twitter:description" content="Npm淘宝镜像cnpm:  npm install -g cnpm –registry=https://registry.npm.taobao.org Packagepackages中申明了需要下载的依赖包和其对应的版本。 其中，版本号的申明有多种规则，即不同的语义内容，具体如下： 12345678910111213&amp;quot;devDependencies&amp;quot;: &amp;#123;   &amp;qu">
+<meta name="twitter:description" content="Npm淘宝镜像cnpm:  npm install -g cnpm —registry=https://registry.npm.taobao.org Packagepackages中申明了需要下载的依赖包和其对应的版本。 其中，版本号的申明有多种规则，即不同的语义内容，具体如下： 12345678910111213&amp;quot;devDependencies&amp;quot;: &amp;#123;   &amp;qu">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -96,15 +96,13 @@
     <div class="article-entry typo" itemprop="articleBody">
       
         <h3 id="Npm"><a href="#Npm" class="headerlink" title="Npm"></a>Npm</h3><p>淘宝镜像cnpm:</p>
-<p> npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
+<p> npm install -g cnpm —registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
 <h3 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h3><p>packages中申明了需要下载的依赖包和其对应的版本。</p>
 <p>其中，版本号的申明有多种规则，即不同的语义内容，具体如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&quot;devDependencies&quot;: &#123;</span><br><span class="line">   &quot;@babel/core&quot;: &quot;^7.4.4&quot;, // &gt;=v7.4.4 but &lt;v8</span><br><span class="line">   &quot;@babel/preset-env&quot;: &quot;~7.4.4&quot;, // &gt;=v7.4.4 but &lt;v7.5</span><br><span class="line">   &quot;@babel/preset-react&quot;: &quot;7.0.0&quot;, // ==v7.0.0</span><br><span class="line">   &quot;qux&quot; : &quot;&lt;1.0.0 || &gt;=2.3.1 &lt;2.4.5 || &gt;=2.5.2 &lt;3.0.0&quot;, </span><br><span class="line">   &quot;asd&quot; : &quot;http://asdf.com/asdf.tar.gz&quot;, // 指定包地址</span><br><span class="line">   &quot;thr&quot; : &quot;*&quot;,  // 任意版本</span><br><span class="line">   &quot;thr2&quot;: &quot;&quot;, // 任意版本</span><br><span class="line">   &quot;lat&quot; : &quot;latest&quot;, // 当前最新</span><br><span class="line">   &quot;dyl&quot; : &quot;file:../dyl&quot;, // 本地地址</span><br><span class="line">   &quot;xyz&quot; : &quot;git+ssh://git@github.com:npm/npm.git#v1.0.27&quot;, // git 地址</span><br><span class="line">   ...</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
 <p>更新一个包和对应的package内容:</p>
 <p>package.json中的内容会自动更新（npm &gt;=v5.0)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update &lt;package.name&gt;</span><br></pre></td></tr></table></figure>
-
 <h3 id="Package-lock"><a href="#Package-lock" class="headerlink" title="Package-lock"></a>Package-lock</h3><p>Package中相同的语义规则下，安装的可能是不同版本的package，这可能会造成一些问题。然后npm更新了一个版本(v5.0)，至此之后，会多出一个package-lock.json，显示了安装的真正版本。</p>
 <p>那么出现一个问题，package和package-lock安装的内容可能还是不一样的,因为lock文件只是显示了具体安装的版本，而package语义规则下的版本可能与lock版本不同，所以，需要以其中一个为主才行。</p>
 <p>如果package-lock下的版本符合package的语义规则，那么就按照lock所记录的版本。</p>
@@ -113,13 +111,10 @@
 <p>使用指令和npm差不太多.</p>
 <p>安装：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g yarn</span><br></pre></td></tr></table></figure>
-
 <p>淘宝镜像:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
 <p>常用命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">- npm install === yarn</span><br><span class="line">- npm install &lt;package-name&gt; --save  === yarn add &lt;package-name&gt;</span><br><span class="line">- npm uninstall &lt;package-name&gt; --save  === yarn remove &lt;package-name&gt;</span><br><span class="line">- npm install &lt;package-name&gt; --save-dev  === yarn add &lt;package-name&gt; --dev</span><br><span class="line">- npm update --save === yarn upgrade</span><br><span class="line"></span><br><span class="line">- npm install taco@latest --save === yarn add taco</span><br><span class="line">- npm install taco --global === yarn global add taco</span><br><span class="line">- npm init === yarn init</span><br><span class="line">- npm init --yes/-y === yarn init --yes/-y</span><br><span class="line">- npm link === yarn link</span><br><span class="line">- npm outdated === yarn outdated</span><br><span class="line">- npm publish === yarn publish</span><br><span class="line">- npm run === yarn run</span><br><span class="line">- npm cache clean === yarn cache clean</span><br><span class="line">- npm login === yarn login</span><br><span class="line">- npm test === yarn test</span><br></pre></td></tr></table></figure>
-
 
       
       
@@ -221,5 +216,20 @@
 
 
     </div>
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>

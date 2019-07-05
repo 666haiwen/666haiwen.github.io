@@ -5,17 +5,17 @@
   
   <title>前端引入第三方库 | Blog for recording</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在使用第三方库的情况下，可能会有以下的问题： 12\src	index.js  我们在index.js中使用了d3这个库，引入方式是： 1import * as THREE from &amp;apos;three&amp;apos;;  一切没有问题，可以直接使用诸如THREE.Scene()等等，但是这个时候你想用第三方的库，例如官方的THREE.OrbitControls()，但它并不在three库本身当中">
+  <meta name="description" content="在使用第三方库的情况下，可能会有以下的问题： 12\src	index.js 我们在index.js中使用了d3这个库，引入方式是： 1import * as THREE from &amp;apos;three&amp;apos;; 一切没有问题，可以直接使用诸如THREE.Scene()等等，但是这个时候你想用第三方的库，例如官方的THREE.OrbitControls()，但它并不在three库本身当中，这">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端引入第三方库">
 <meta property="og:url" content="https://666haiwen.github.io/2019/06/18/webpack/index.html">
 <meta property="og:site_name" content="Blog for recording">
-<meta property="og:description" content="在使用第三方库的情况下，可能会有以下的问题： 12\src	index.js  我们在index.js中使用了d3这个库，引入方式是： 1import * as THREE from &amp;apos;three&amp;apos;;  一切没有问题，可以直接使用诸如THREE.Scene()等等，但是这个时候你想用第三方的库，例如官方的THREE.OrbitControls()，但它并不在three库本身当中">
+<meta property="og:description" content="在使用第三方库的情况下，可能会有以下的问题： 12\src	index.js 我们在index.js中使用了d3这个库，引入方式是： 1import * as THREE from &amp;apos;three&amp;apos;; 一切没有问题，可以直接使用诸如THREE.Scene()等等，但是这个时候你想用第三方的库，例如官方的THREE.OrbitControls()，但它并不在three库本身当中，这">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-18T08:47:24.673Z">
+<meta property="og:updated_time" content="2019-07-05T06:47:01.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端引入第三方库">
-<meta name="twitter:description" content="在使用第三方库的情况下，可能会有以下的问题： 12\src	index.js  我们在index.js中使用了d3这个库，引入方式是： 1import * as THREE from &amp;apos;three&amp;apos;;  一切没有问题，可以直接使用诸如THREE.Scene()等等，但是这个时候你想用第三方的库，例如官方的THREE.OrbitControls()，但它并不在three库本身当中">
+<meta name="twitter:description" content="在使用第三方库的情况下，可能会有以下的问题： 12\src	index.js 我们在index.js中使用了d3这个库，引入方式是： 1import * as THREE from &amp;apos;three&amp;apos;; 一切没有问题，可以直接使用诸如THREE.Scene()等等，但是这个时候你想用第三方的库，例如官方的THREE.OrbitControls()，但它并不在three库本身当中，这">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -97,28 +97,21 @@
       
         <p>在使用第三方库的情况下，可能会有以下的问题：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">\src</span><br><span class="line">	index.js</span><br></pre></td></tr></table></figure>
-
 <p>我们在<em>index.js</em>中使用了<em>d3</em>这个库，引入方式是：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import * as THREE from &apos;three&apos;;</span><br></pre></td></tr></table></figure>
-
 <p>一切没有问题，可以直接使用诸如<em>THREE.Scene()</em>等等，但是这个时候你想用第三方的库，例如官方的<em>THREE.OrbitControls()</em>，但它并不在<em>three</em>库本身当中，这意味着，你不能直接使用<em>THREE.OrbitControls()</em></p>
 <p>这个时候，你从官网下载了OrbitControls.js的代码，放在</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\scr</span><br><span class="line">	index.js</span><br><span class="line">	OrbitControl.js //Add</span><br></pre></td></tr></table></figure>
-
 <p>想把它import进来，有以下两种方法。</p>
 <h4 id="不用webpack"><a href="#不用webpack" class="headerlink" title="不用webpack"></a>不用webpack</h4><p>找到OrbitControls.js</p>
 <p>在开头添加如下语句:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">+ import * as THREE from &apos;three&apos;;</span><br><span class="line"></span><br><span class="line">THREE.OrbitControls = function ( object, domElement ) &#123;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>接着，在index.js中，增加：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import * as THREE from &apos;three&apos;;</span><br><span class="line">+ import &apos;./OrbitControls&apos;;</span><br></pre></td></tr></table></figure>
-
 <h4 id="使用webpack-ProvidePlugin"><a href="#使用webpack-ProvidePlugin" class="headerlink" title="使用webpack-ProvidePlugin"></a>使用webpack-ProvidePlugin</h4><p>在webpack的配置文件中添加：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;);</span><br><span class="line">+ const webpack = require(&apos;webpack&apos;);</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  ...</span><br><span class="line">+ plugins: [</span><br><span class="line">    new webpack.ProvidePlugin(&#123;</span><br><span class="line">      THREE: &apos;three&apos;,</span><br><span class="line">    &#125;),</span><br><span class="line">  ],</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <p>这个新增插件的功能是说，下次再使用THREE的地方，自动加载<em>three</em>这个库，同样在<em>index.js</em>中增加：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import * as THREE from &apos;three&apos;;</span><br><span class="line">+ import &apos;./OrbitControls&apos;;</span><br></pre></td></tr></table></figure>
-
 <p>即可。</p>
 
       
@@ -153,7 +146,14 @@
     
 <nav id="article-nav" class="article-nav">
   
-    <span id="article-nav-newer" class="article-nav-link-wrap newer"></span>
+    <a href="/2019/06/25/Markov-decision-process/" id="article-nav-newer" class="article-nav-link-wrap newer">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Markov decision process
+        
+      </div>
+    </a>
   
   
     <a href="/2019/06/15/Npm-package-json-package-lock-json-yarn/" id="article-nav-older" class="article-nav-link-wrap older">
@@ -214,5 +214,20 @@
 
 
     </div>
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
 </html>
