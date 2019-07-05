@@ -73,9 +73,16 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: typing
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: https://github.com/666haiwen/666haiwen.github.io.git
+  branch: master
+
+
+## MathJax
+mathjax:
+    enable: true
