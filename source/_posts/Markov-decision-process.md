@@ -1,5 +1,5 @@
 ---
-title: Markov decision process
+title: ReinforenceLearning -- Markov decision process
 date: 2019-06-25 13:27:00
 mathjax: true
 tags:
@@ -18,7 +18,7 @@ categories:
 
 ### Markov Reward Process
 
-- 在前者的基础上，增加了$(\mathcal{S,P,\color{red}{\mathcal{R,\gamma}}})$
+- 在前者的基础上，增加了$(\mathcal{S,P,\color{red}{\mathcal{R,\gamma}}})​$
 - $\color{red}{\mathcal{R}是一个奖励函数，\mathcal{R_s}=\mathbb{E}[R_{t+1}|\mathcal{S}=s]}$
 - $\color{red}\gamma是一个衰减因子，\gamma\in[0,1]$
 
@@ -46,7 +46,7 @@ $$
 
 #### 贝尔曼方程([Bellman equation](https://en.wikipedia.org/wiki/Bellman_equation))
 
-![](img/bellman equation.jpg)
+![](Markov-decision-process/bellman equation.jpg)
 
 最后一行理由为：x的期望的期望是x期望其本身.得到了一个重要的**递归**公式:
 $$
@@ -61,23 +61,23 @@ $$
 
 #### 矩阵求解
 
-![](img/bellman-2.png)
+![](Markov-decision-process/bellman-2.png)
 
 ### Markov Decision Process
 
-![](img/mdp-1.png)
+![](Markov-decision-process/mdp-1.png)
 
 ### 策略(policy)
 
-![](img/mdp-2.png)
+![](Markov-decision-process/mdp-2.png)
 
 策略代表了在给定状态$s$下，可能的动作概率分布。
 
-![](img/mdp-3.png)
+![](Markov-decision-process/mdp-3.png)
 
 ### 价值函数-2
 
-![](img/mdp-4.png)
+![](Markov-decision-process/mdp-4.png)
 $$
 \begin{align}
 v_\pi(s)&=\sum_{a\in\mathcal{A}}\pi(a|s)q_\pi(s,a) \\
@@ -101,25 +101,39 @@ $q_\pi(s,a)$由两部分组成，及时回报和执行这个操作后可能到�
 
 ### 将其最优化
 
-![](img/mdp-5.png)
+![](Markov-decision-process/mdp-5.png)
 
 ### 最优策略
 
-![](img/mdp-6.png)
+![](Markov-decision-process/mdp-6.png)
 
 ### 最优状态动作价值函数
 
-![](img/mdp-7.png)
+![](Markov-decision-process/mdp-7.png)
 
 彼此带入：
 
-![](img/mdp-8.png)
+![](Markov-decision-process/mdp-8.png)
 
 ### 如何求解
 
-得到最优解的递归形式，如何求解就很关键了。主要方法有：value iteration;Policy iteration;Q-learning,Sarsa等等.
+得到最优解的递归形式，如何求解就很关键了。主要方法有：value Function(Q-learning,Sarsa);Policy gradient(PPO);AC等等.
+
+![](D:/SSD_workspace/githubIo/source/_posts/ReinforenceLearning-Policy-Gradient-Algorithms/ac-0.png)
+
+*Fig.  Summary of approaches in RL based on whether we want to model the value, policy, or the environment. (Image source: reproduced from David Silver’s RL course lecture 1.)* 
+
+### On-policy vs Off-policy
+
+- **Model-based**: Rely on the model of the environment; either the model is known or the algorithm learns it explicitly.(*When we fully know the environment, we can find the optimal solution by [Dynamic Programming](https://en.wikipedia.org/wiki/Dynamic_programming) (DP).*)
+- **Model-free**: No dependency on the model during learning.
+- **Model-based**尝试着model整个环境；先model了这个环境，基于该环境做出最优的策略；**Model-free**就是走一步看一步，在每一步中去尝试学习最优的策略。
+- *The model-based learning uses environment, action and reward to get the most reward from the action. The model-free learning only uses its action and reward to infer the best action.*
 
 
+
+- **On-policy**: The agent learned and the agent interacting with the environment is the same.(**自己和环境互动**)
+- **Off-policy**:The agent learned and the agent interacting with the environment is different.(**自己看别人玩**)
 
 ### Inference
 

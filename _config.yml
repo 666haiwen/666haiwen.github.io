@@ -86,3 +86,14 @@ deploy:
 ## MathJax
 mathjax:
     enable: true
+
+## Toc
+toc:
+  maxdepth: 3
+  class: toc
+  slugify: transliteration
+  decodeEntities: false
+  anchor:
+    position: after
+    symbol: '#'
+    style: header-anchor
