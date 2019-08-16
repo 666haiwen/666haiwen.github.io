@@ -3,31 +3,32 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Markov decision process | Blog for recording</title>
+  <title>ReinforenceLearning -- Markov decision process | Blog for recording</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Markov ProcessDefinition 元组 $(\mathcal{S,P})$ $\mathcal{S}$是一个有限状态的集合 $\mathcal{P}$是一个状态转移矩阵：$\mathcal{P_{ss’}}=\mathbb{P}[\mathcal{S_t+1}=s’|\mathcal{S_t}=s]$  Markov Reward Process 在前者的基础上，增加了$(\mat">
 <meta name="keywords" content="Reinforcement Learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markov decision process">
+<meta property="og:title" content="ReinforenceLearning -- Markov decision process">
 <meta property="og:url" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/index.html">
 <meta property="og:site_name" content="Blog for recording">
 <meta property="og:description" content="Markov ProcessDefinition 元组 $(\mathcal{S,P})$ $\mathcal{S}$是一个有限状态的集合 $\mathcal{P}$是一个状态转移矩阵：$\mathcal{P_{ss’}}=\mathbb{P}[\mathcal{S_t+1}=s’|\mathcal{S_t}=s]$  Markov Reward Process 在前者的基础上，增加了$(\mat">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/img/bellman%20equation.jpg">
-<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/img/bellman-2.png">
-<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/img/mdp-1.png">
-<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/img/mdp-2.png">
-<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/img/mdp-3.png">
-<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/img/mdp-4.png">
-<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/img/mdp-5.png">
-<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/img/mdp-6.png">
-<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/img/mdp-7.png">
-<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/img/mdp-8.png">
-<meta property="og:updated_time" content="2019-07-05T07:29:19.284Z">
+<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/bellman%20equation.jpg">
+<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/bellman-2.png">
+<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/mdp-1.png">
+<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/mdp-2.png">
+<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/mdp-3.png">
+<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/mdp-4.png">
+<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/mdp-5.png">
+<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/mdp-6.png">
+<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/mdp-7.png">
+<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/mdp-8.png">
+<meta property="og:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/SSD_workspace/githubIo/source/_posts/ReinforenceLearning-Policy-Gradient-Algorithms/ac-0.png">
+<meta property="og:updated_time" content="2019-08-16T07:22:41.706Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Markov decision process">
+<meta name="twitter:title" content="ReinforenceLearning -- Markov decision process">
 <meta name="twitter:description" content="Markov ProcessDefinition 元组 $(\mathcal{S,P})$ $\mathcal{S}$是一个有限状态的集合 $\mathcal{P}$是一个状态转移矩阵：$\mathcal{P_{ss’}}=\mathbb{P}[\mathcal{S_t+1}=s’|\mathcal{S_t}=s]$  Markov Reward Process 在前者的基础上，增加了$(\mat">
-<meta name="twitter:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/img/bellman%20equation.jpg">
+<meta name="twitter:image" content="https://666haiwen.github.io/2019/06/25/Markov-decision-process/bellman%20equation.jpg">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -99,7 +100,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Markov decision process
+      ReinforenceLearning -- Markov decision process
     </h1>
   
 
@@ -107,14 +108,19 @@
     
     <div class="article-entry typo" itemprop="articleBody">
       
+        
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Markov-Process"><span class="toc-text">Markov Process</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Definition"><span class="toc-text">Definition</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markov-Reward-Process"><span class="toc-text">Markov Reward Process</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#G-t"><span class="toc-text">$G_t$</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#价值函数-Value-Function"><span class="toc-text">价值函数(Value Function)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#贝尔曼方程-Bellman-equation"><span class="toc-text">贝尔曼方程(Bellman equation)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#矩阵求解"><span class="toc-text">矩阵求解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markov-Decision-Process"><span class="toc-text">Markov Decision Process</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#策略-policy"><span class="toc-text">策略(policy)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#价值函数-2"><span class="toc-text">价值函数-2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#将其最优化"><span class="toc-text">将其最优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最优策略"><span class="toc-text">最优策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#最优状态动作价值函数"><span class="toc-text">最优状态动作价值函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何求解"><span class="toc-text">如何求解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#On-policy-vs-Off-policy"><span class="toc-text">On-policy vs Off-policy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Inference"><span class="toc-text">Inference</span></a></li></ol>
+    </div>
+    
         <h3 id="Markov-Process"><a href="#Markov-Process" class="headerlink" title="Markov Process"></a>Markov Process</h3><h4 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h4><ul>
 <li>元组 $(\mathcal{S,P})$</li>
 <li>$\mathcal{S}$是一个有限状态的集合</li>
 <li>$\mathcal{P}$是一个状态转移矩阵：$\mathcal{P_{ss’}}=\mathbb{P}[\mathcal{S_t+1}=s’|\mathcal{S_t}=s]$</li>
 </ul>
 <h3 id="Markov-Reward-Process"><a href="#Markov-Reward-Process" class="headerlink" title="Markov Reward Process"></a>Markov Reward Process</h3><ul>
-<li>在前者的基础上，增加了$(\mathcal{S,P,\color{red}{\mathcal{R,\gamma}}})$</li>
-<li>$\color{red}{\mathcal{R}是一个奖励函数，\mathcal{R_s}=\mathbb{E}[R_{t+1}|\mathcal{S}=s]}$</li>
+<li>在前者的基础上，增加了$(\mathcal{S,P,\color{red}{\mathcal{R,\gamma}}})​$</li>
+<li>$\color{red}{\mathcal{R}是一个奖励函数，\mathcal{R<em>s}=\mathbb{E}[R</em>{t+1}|\mathcal{S}=s]}$</li>
 <li>$\color{red}\gamma是一个衰减因子，\gamma\in[0,1]$</li>
 </ul>
 <p>奖励函数$\mathcal{R}$代表了从状态$s$转移到状态$s’$时获得的奖励，这里奖励是离开状态后得到的(至于离开得到奖励还是进入一个新状态得到奖励只是定义了一种获得的规则而已)</p>
@@ -123,19 +129,19 @@ G_t=R_{t+1}+\gamma R_{t+2}+...=\mathcal{\sum_{k=0}^{\gamma^k}}R_{t+k+1}</script>
 <p>目标是将其最大化。</p>
 <h4 id="价值函数-Value-Function"><a href="#价值函数-Value-Function" class="headerlink" title="价值函数(Value Function)"></a>价值函数(Value Function)</h4><script type="math/tex; mode=display">
 v(s)=\Bbb{E}[G_t|\mathcal{S_t}=s]</script><p>其代表着在状态$s$下的，$G_t$的期望值，因为从一个状态s出发有很多种不同的决策路径，得到不同的$G_t$</p>
-<h4 id="贝尔曼方程-Bellman-equation"><a href="#贝尔曼方程-Bellman-equation" class="headerlink" title="贝尔曼方程(Bellman equation)"></a>贝尔曼方程(<a href="https://en.wikipedia.org/wiki/Bellman_equation" target="_blank" rel="noopener">Bellman equation</a>)</h4><p><img src="img/bellman equation.jpg" alt></p>
+<h4 id="贝尔曼方程-Bellman-equation"><a href="#贝尔曼方程-Bellman-equation" class="headerlink" title="贝尔曼方程(Bellman equation)"></a>贝尔曼方程(<a href="https://en.wikipedia.org/wiki/Bellman_equation" target="_blank" rel="noopener">Bellman equation</a>)</h4><p><img src="/2019/06/25/Markov-decision-process/bellman equation.jpg" alt></p>
 <p>最后一行理由为：x的期望的期望是x期望其本身.得到了一个重要的<strong>递归</strong>公式:</p>
 <script type="math/tex; mode=display">
 \begin{align}
 v(s) &= \Bbb{E}[R_{t+1}+\gamma v(\mathcal{S_{t+1}})|\mathcal{S_t}=s] \\
 &=\mathcal{R_s}+\gamma \sum_{s'\in S}\mathcal{P}_{ss'}v(s')
-\end{align}</script><p>其有两部分组成，及时奖励的期望$\boldsymbol{R_{t+1}}$  ,下一个时刻状态$\boldsymbol{s_{t+1}}$ 的期望</p>
-<h4 id="矩阵求解"><a href="#矩阵求解" class="headerlink" title="矩阵求解"></a>矩阵求解</h4><p><img src="img/bellman-2.png" alt></p>
-<h3 id="Markov-Decision-Process"><a href="#Markov-Decision-Process" class="headerlink" title="Markov Decision Process"></a>Markov Decision Process</h3><p><img src="img/mdp-1.png" alt></p>
-<h3 id="策略-policy"><a href="#策略-policy" class="headerlink" title="策略(policy)"></a>策略(policy)</h3><p><img src="img/mdp-2.png" alt></p>
+\end{align}</script><p>其有两部分组成，及时奖励的期望$\boldsymbol{R<em>{t+1}}$  ,下一个时刻状态$\boldsymbol{s</em>{t+1}}$ 的期望</p>
+<h4 id="矩阵求解"><a href="#矩阵求解" class="headerlink" title="矩阵求解"></a>矩阵求解</h4><p><img src="/2019/06/25/Markov-decision-process/bellman-2.png" alt></p>
+<h3 id="Markov-Decision-Process"><a href="#Markov-Decision-Process" class="headerlink" title="Markov Decision Process"></a>Markov Decision Process</h3><p><img src="/2019/06/25/Markov-decision-process/mdp-1.png" alt></p>
+<h3 id="策略-policy"><a href="#策略-policy" class="headerlink" title="策略(policy)"></a>策略(policy)</h3><p><img src="/2019/06/25/Markov-decision-process/mdp-2.png" alt></p>
 <p>策略代表了在给定状态$s$下，可能的动作概率分布。</p>
-<p><img src="img/mdp-3.png" alt></p>
-<h3 id="价值函数-2"><a href="#价值函数-2" class="headerlink" title="价值函数-2"></a>价值函数-2</h3><p><img src="img/mdp-4.png" alt></p>
+<p><img src="/2019/06/25/Markov-decision-process/mdp-3.png" alt></p>
+<h3 id="价值函数-2"><a href="#价值函数-2" class="headerlink" title="价值函数-2"></a>价值函数-2</h3><p><img src="/2019/06/25/Markov-decision-process/mdp-4.png" alt></p>
 <script type="math/tex; mode=display">
 \begin{align}
 v_\pi(s)&=\sum_{a\in\mathcal{A}}\pi(a|s)q_\pi(s,a) \\
@@ -148,12 +154,24 @@ q_\pi(s,a)&=\mathcal{R}_s^a+\gamma\sum_{s'\in\mathcal{S}}\mathcal{P}_{ss'}^a\sum
 \end{align}</script><p>可以发现，也是个递归地过程</p>
 <p>$v_\pi(s)$是由当前状态$s$下，策略$\pi$可能的动作概率*该动作下得到的奖励值，累加而成</p>
 <p>$q_\pi(s,a)$由两部分组成，及时回报和执行这个操作后可能到达所有状态$s’$的价值函数的累加</p>
-<h3 id="将其最优化"><a href="#将其最优化" class="headerlink" title="将其最优化"></a>将其最优化</h3><p><img src="img/mdp-5.png" alt></p>
-<h3 id="最优策略"><a href="#最优策略" class="headerlink" title="最优策略"></a>最优策略</h3><p><img src="img/mdp-6.png" alt></p>
-<h3 id="最优状态动作价值函数"><a href="#最优状态动作价值函数" class="headerlink" title="最优状态动作价值函数"></a>最优状态动作价值函数</h3><p><img src="img/mdp-7.png" alt></p>
+<h3 id="将其最优化"><a href="#将其最优化" class="headerlink" title="将其最优化"></a>将其最优化</h3><p><img src="/2019/06/25/Markov-decision-process/mdp-5.png" alt></p>
+<h3 id="最优策略"><a href="#最优策略" class="headerlink" title="最优策略"></a>最优策略</h3><p><img src="/2019/06/25/Markov-decision-process/mdp-6.png" alt></p>
+<h3 id="最优状态动作价值函数"><a href="#最优状态动作价值函数" class="headerlink" title="最优状态动作价值函数"></a>最优状态动作价值函数</h3><p><img src="/2019/06/25/Markov-decision-process/mdp-7.png" alt></p>
 <p>彼此带入：</p>
-<p><img src="img/mdp-8.png" alt></p>
-<h3 id="如何求解"><a href="#如何求解" class="headerlink" title="如何求解"></a>如何求解</h3><p>得到最优解的递归形式，如何求解就很关键了。主要方法有：value iteration;Policy iteration;Q-learning,Sarsa等等.</p>
+<p><img src="/2019/06/25/Markov-decision-process/mdp-8.png" alt></p>
+<h3 id="如何求解"><a href="#如何求解" class="headerlink" title="如何求解"></a>如何求解</h3><p>得到最优解的递归形式，如何求解就很关键了。主要方法有：value Function(Q-learning,Sarsa);Policy gradient(PPO);AC等等.</p>
+<p><img src="/2019/06/25/Markov-decision-process/SSD_workspace/githubIo/source/_posts/ReinforenceLearning-Policy-Gradient-Algorithms/ac-0.png" alt></p>
+<p><em>Fig.  Summary of approaches in RL based on whether we want to model the value, policy, or the environment. (Image source: reproduced from David Silver’s RL course lecture 1.)</em> </p>
+<h3 id="On-policy-vs-Off-policy"><a href="#On-policy-vs-Off-policy" class="headerlink" title="On-policy vs Off-policy"></a>On-policy vs Off-policy</h3><ul>
+<li><strong>Model-based</strong>: Rely on the model of the environment; either the model is known or the algorithm learns it explicitly.(<em>When we fully know the environment, we can find the optimal solution by <a href="https://en.wikipedia.org/wiki/Dynamic_programming" target="_blank" rel="noopener">Dynamic Programming</a> (DP).</em>)</li>
+<li><strong>Model-free</strong>: No dependency on the model during learning.</li>
+<li><strong>Model-based</strong>尝试着model整个环境；先model了这个环境，基于该环境做出最优的策略；<strong>Model-free</strong>就是走一步看一步，在每一步中去尝试学习最优的策略。</li>
+<li><em>The model-based learning uses environment, action and reward to get the most reward from the action. The model-free learning only uses its action and reward to infer the best action.</em></li>
+</ul>
+<ul>
+<li><strong>On-policy</strong>: The agent learned and the agent interacting with the environment is the same.(<strong>自己和环境互动</strong>)</li>
+<li><strong>Off-policy</strong>:The agent learned and the agent interacting with the environment is different.(<strong>自己看别人玩</strong>)</li>
+</ul>
 <h3 id="Inference"><a href="#Inference" class="headerlink" title="Inference"></a>Inference</h3><p><a href="https://blog.csdn.net/liweibin1994/article/details/79079884" target="_blank" rel="noopener">csdn-blog</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/28084942" target="_blank" rel="noopener">David Silver强化学习公开课</a></p>
 <p>David Silver slides</p>
@@ -280,6 +298,6 @@ q_\pi(s,a)&=\mathcal{R}_s^a+\gamma\sum_{s'\in\mathcal{S}}\mathcal{P}_{ss'}^a\sum
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
