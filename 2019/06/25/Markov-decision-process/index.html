@@ -120,7 +120,7 @@
 </ul>
 <h3 id="Markov-Reward-Process"><a href="#Markov-Reward-Process" class="headerlink" title="Markov Reward Process"></a>Markov Reward Process</h3><ul>
 <li>在前者的基础上，增加了$(\mathcal{S,P,\color{red}{\mathcal{R,\gamma}}})​$</li>
-<li>$\color{red}{\mathcal{R}是一个奖励函数，\mathcal{R<em>s}=\mathbb{E}[R</em>{t+1}|\mathcal{S}=s]}$</li>
+<li>$\color{red}{\mathcal{R}是一个奖励函数，\mathcal{R_s}=\mathbb{E}[R_{t+1}|\mathcal{S}=s]}$</li>
 <li>$\color{red}\gamma是一个衰减因子，\gamma\in[0,1]$</li>
 </ul>
 <p>奖励函数$\mathcal{R}$代表了从状态$s$转移到状态$s’$时获得的奖励，这里奖励是离开状态后得到的(至于离开得到奖励还是进入一个新状态得到奖励只是定义了一种获得的规则而已)</p>
@@ -135,7 +135,7 @@ v(s)=\Bbb{E}[G_t|\mathcal{S_t}=s]</script><p>其代表着在状态$s$下的，$G
 \begin{align}
 v(s) &= \Bbb{E}[R_{t+1}+\gamma v(\mathcal{S_{t+1}})|\mathcal{S_t}=s] \\
 &=\mathcal{R_s}+\gamma \sum_{s'\in S}\mathcal{P}_{ss'}v(s')
-\end{align}</script><p>其有两部分组成，及时奖励的期望$\boldsymbol{R<em>{t+1}}$  ,下一个时刻状态$\boldsymbol{s</em>{t+1}}$ 的期望</p>
+\end{align}</script><p>其有两部分组成，及时奖励的期望$\boldsymbol{R_{t+1}}$  ,下一个时刻状态$\boldsymbol{s_{t+1}}$ 的期望</p>
 <h4 id="矩阵求解"><a href="#矩阵求解" class="headerlink" title="矩阵求解"></a>矩阵求解</h4><p><img src="/2019/06/25/Markov-decision-process/bellman-2.png" alt></p>
 <h3 id="Markov-Decision-Process"><a href="#Markov-Decision-Process" class="headerlink" title="Markov Decision Process"></a>Markov Decision Process</h3><p><img src="/2019/06/25/Markov-decision-process/mdp-1.png" alt></p>
 <h3 id="策略-policy"><a href="#策略-policy" class="headerlink" title="策略(policy)"></a>策略(policy)</h3><p><img src="/2019/06/25/Markov-decision-process/mdp-2.png" alt></p>
@@ -284,20 +284,5 @@ q_\pi(s,a)&=\mathcal{R}_s^a+\gamma\sum_{s'\in\mathcal{S}}\mathcal{P}_{ss'}^a\sum
 
 
     </div>
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
+  </body>
 </html>
