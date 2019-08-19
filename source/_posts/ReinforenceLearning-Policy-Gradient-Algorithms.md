@@ -1,6 +1,7 @@
 ---
 title: ReinforenceLearning--Policy Gradient Algorithms
 date: 2019-08-16 14:33:32
+mathjax: true
 tags:
 - [Reinforcement Learning]
 categories:
@@ -11,9 +12,9 @@ categories:
 Policy $\pi$,代表在状态$s$，会执行的动作$a$.(分为确定性和随机性)
 
 - Deterministic: $\pi(s)=a.$
-- Stochastic: $π(a|s)=\mathbb{P}_π[A=a|S=s]$
+- Stochastic: $\pi(a|s)=\mathbb{P}_\pi[A=a|S=s]$
 
-==> $π_\theta(a|s)=\mathbb{P}_π[A=a|S=s,\theta]$
+- $\pi_\theta(a|s)=\mathbb{P}_\pi[A=a|S=s,\theta]$
 
 
 
@@ -39,7 +40,7 @@ $J_{avV}(\theta)=\sum_sd^{\pi_\theta}(s)V^{\pi_\theta}(s)$
 
 $J_{avR}(\theta)=\sum_sd^{\pi_\theta}(s)\sum_a\pi_\theta(s,a)\mathcal{R}_s^a$
 
-其中,$d^{\pi_\theta}(s)$是马尔科夫链在$\pi_\theta$下的随机概率分布；即$d^π(s)=lim_{t→∞}P(s_t=s|s_0,π_θ)$就表示你从状态$s_0$开始，在策略$π_θ$下经过$t$个时间步后到达状态$s$的概率。
+其中,$d^{\pi_\theta}(s)​$是马尔科夫链在$\pi_\theta​$下的随机概率分布；即$d^\pi(s)=lim_{t→∞}P(s_t=s|s_0,\pi_θ)​$就表示你从状态$s_0​$开始，在策略$\pi_θ​$下经过$t​$个时间步后到达状态$s​$的概率。
 
 该式代表了到达某个状态$s$,并且采用动作$a$的情况下，获得的平均回报$\mathcal{R_s^a}$,概率化累加就是平均回报.
 

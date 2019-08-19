@@ -17,6 +17,10 @@ categories:
 
 <https://pengloo53.gitbooks.io/hexo/content/chapter2/7%20%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E7%9B%AE%E5%BD%95.html>
 
+### Hexo-数学公式
+
+<https://www.jianshu.com/p/7ab21c7f0674>
+
 ### Hexo-图片插入
 
 hexo本质是把markdown转义称为了html.在图片插入的过程中，只要保证图片链接没有问题就可以了.
